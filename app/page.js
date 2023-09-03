@@ -47,7 +47,7 @@ const page = () => {
 
   return (
     <>
-    <h1 className='text-center text-3xl p-5 font-semibold bg-slate-700 text-white'>
+    <h1 className='text-center text-3xl p-5 font-semibold bg-emerald-600 text-white'>
       ToDo List</h1>
       <form onSubmit={submitHandler}>
         <div className='text-center'>
@@ -65,13 +65,13 @@ const page = () => {
           setdesc(e.target.value)
         }}       
         />
-        <button className='text-cyan-200 bg-teal-900 px-6 py-2 text-l font-semibold rounded m-5'>
+        <button className='text-white bg-slate-700 px-6 py-2 text-l font-semibold rounded m-5'>
           Add Task
           </button>
           </div>
       </form>
       <hr />
-      <div className='p-4 bg-gray-600'>
+      <div className='p-4 bg-cyan-500'>
         <ul>
           {renderTask}
         </ul>
@@ -81,3 +81,6 @@ const page = () => {
 }
 
 export default page
+
+
+
