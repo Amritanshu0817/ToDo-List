@@ -1,7 +1,13 @@
 'use client'
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
+
+  const notify = () => {
+    toast("Task Added")
+  }
 
   const [title, settitle] = useState("")
   const [desc, setdesc] = useState("")
@@ -18,6 +24,7 @@ const page = () => {
     let copyTask = [...mainTask]
     copyTask.splice(i,1)
     setmainTask(copyTask)
+    toast("Task Deleted")
   }
 
   let renderTask = <h2 className="text-center text-l font-medium text-white">No Task Available</h2>
@@ -65,9 +72,11 @@ const page = () => {
           setdesc(e.target.value)
         }}       
         />
-        <button className='text-white bg-slate-700 px-6 py-2 text-l font-semibold rounded m-5'>
+        <button className='text-white bg-slate-700 px-6 py-2 text-l font-semibold rounded m-5'
+        onClick={notify}>
           Add Task
           </button>
+          <ToastContainer />
           </div>
       </form>
       <hr />
